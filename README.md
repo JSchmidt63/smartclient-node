@@ -21,6 +21,7 @@ Instalation process can be repeated by running installed script `./node_modules/
 ### Starting server
 ```
 ./node_modules/.bin/smartclient-server
+.\node_molules\.bin\smartclient-server
 ```
 
 ### Configuration
