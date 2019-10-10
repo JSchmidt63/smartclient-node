@@ -130,26 +130,26 @@ class Install {
         fs.ensureDirSync(tmpDirName);
         const zipFileName = path.join(tmpDirName, Const.SMART_CLIENT_ZIP);
         console.log("Downloading SmarClient runtime from " + Const.SMART_CLIENT_LINK);
-        const request = https.get(Const.SMART_CLIENT_LINK, function(response) {
-            if (response.statusCode !== 200) {
-                console.error("Failed to download SmartClient runtime from: " + Const.SMART_CLIENT_LINK);
-                process.exit(-1);
-            }
-            response.pipe(fs.createWriteStream(zipFileName));
-            response.on("end", function() {
-                console.log("Unzipping SmartClient runtime file " + zipFileName + " to " + tmpDirName);
-                const zipFile = fs.createReadStream(zipFileName);
-                zipFile.pipe(unzip.Extract({
-                    path: tmpDirName
-                }));
-                zipFile.on("end", function() {
-                    console.log("Copying SmartClient runtime to " + path.join(p, Const.WEB, Const.ISOMORPHIC_DIR));
-                    fs.copySync(path.join(tmpDirName, Const.SMART_CLIENT_RUNTIME_NAME, Const.SMART_CLIENT_DIR, Const.ISOMORPHIC_DIR), path.join(p, Const.WEB, Const.ISOMORPHIC_DIR));
-                    console.log("Deleting temporary files from " + tmpDirName);
-                    fs.removeSync(tmpDirName);
-                    console.log("Done.");
-                });
-            });
+        //const request = https.get(Const.SMART_CLIENT_LINK, function(response) {
+        //    if (response.statusCode !== 200) {
+        //        console.error("Failed to download SmartClient runtime from: " + Const.SMART_CLIENT_LINK);
+        //        process.exit(-1);
+        //    }
+        //    response.pipe(fs.createWriteStream(zipFileName));
+        //    response.on("end", function() {
+        //        console.log("Unzipping SmartClient runtime file " + zipFileName + " to " + tmpDirName);
+        //        const zipFile = fs.createReadStream(zipFileName);
+        //        zipFile.pipe(unzip.Extract({
+        //            path: tmpDirName
+        //        }));
+        //        zipFile.on("end", function() {
+        //            console.log("Copying SmartClient runtime to " + path.join(p, Const.WEB, Const.ISOMORPHIC_DIR));
+        //            fs.copySync(path.join(tmpDirName, Const.SMART_CLIENT_RUNTIME_NAME, Const.SMART_CLIENT_DIR, Const.ISOMORPHIC_DIR), path.join(p, Const.WEB, Const.ISOMORPHIC_DIR));
+        //            console.log("Deleting temporary files from " + tmpDirName);
+        //            fs.removeSync(tmpDirName);
+        //            console.log("Done.");
+        //        });
+        //    });
         });
     }
 
