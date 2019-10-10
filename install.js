@@ -32,6 +32,7 @@
 const fs = require("fs-extra");
 const path = require("path");
 const http = require("http");
+const https = require("https");
 const readline = require("readline");
 const unzip = require("unzip");
 
@@ -128,7 +129,7 @@ class Install {
         fs.ensureDirSync(tmpDirName);
         const zipFileName = path.join(tmpDirName, Const.SMART_CLIENT_ZIP);
         console.log("Downloading SmarClient runtime from " + Const.SMART_CLIENT_LINK);
-        const request = http.get(Const.SMART_CLIENT_LINK, function(response) {
+        const request = https.get(Const.SMART_CLIENT_LINK, function(response) {
             if (response.statusCode !== 200) {
                 console.error("Failed to download SmartClient runtime from: " + Const.SMART_CLIENT_LINK);
                 process.exit(-1);
