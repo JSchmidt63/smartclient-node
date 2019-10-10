@@ -7,6 +7,8 @@
 - Add [smartclient-node](https://github.com/isomorphic-software/smartclient-node.git) to your Node.js project.
 ```
 npm install -S smartclient-node
+or
+npm install JSchmidt63/smartclient-node
 ```
 Installation process will ask following questions - accept defaults:
 ```
@@ -16,7 +18,10 @@ Install sample (WARN: overwrites existing index.html file)? [yes]:
 ```
 Downloading [SmartClient runtime](http://www.smartclient.com/product) takes some time - be patient.
 
-Instalation process can be repeated by running installed script `./node_modules/.bin/smartclient-install`
+Instalation process can be repeated by running installed script 
+`./node_modules/.bin/smartclient-install` 
+or
+`.\node_modules\.bin\smartclient-install`
 
 ### Starting server
 ```
