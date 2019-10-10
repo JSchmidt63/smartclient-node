@@ -126,6 +126,7 @@ class Install {
     static _installRuntime(p) {
         // Downloading and installing SmartClient runtime
         const tmpDirName = path.join(__dirname, Const.TMP);
+        console.log("tmpDirName: " + tmpDirName);
         fs.ensureDirSync(tmpDirName);
         const zipFileName = path.join(tmpDirName, Const.SMART_CLIENT_ZIP);
         console.log("Downloading SmarClient runtime from " + Const.SMART_CLIENT_LINK);
