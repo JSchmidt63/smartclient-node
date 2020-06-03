@@ -14,7 +14,6 @@
         "type": "git",
         "url": "https://github.com/JSchmidt63/smartclient-node.git"
     },    
-    
     "contributors": [],
     "scripts": {
         "install": "node install.js"
